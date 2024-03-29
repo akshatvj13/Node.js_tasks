@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require ('mongoose');
 
-const User = require("./Model/users")
+const User = require("./users")
 
 const PORT = process.env.PORT || 2003;
 
@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
 })
 
 app.set("view engine","ejs");
-app.set("views",path.resolve("./views"))
+app.set("views",path.resolve("./"))
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
